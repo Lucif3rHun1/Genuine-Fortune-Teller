@@ -13,7 +13,7 @@ HTML: The backbone of our mystical journey, structuring the form and different s
 CSS: Adding style and magic to the experience with gradients, animations, and transitions.
 JavaScript: The puppet master behind the scenes, orchestrating interactions, animations, and the overall flow.
 
-#How to Use
+# How to Use
 Start the Journey: Open the form and enter your details. Don't worry; it's all part of the cosmic plan.
 Grant Permissions: Allow access to your webcam for an enhanced experience. Trust us; it's worth it.
 Experience the Magic: Sit back and watch as the stars align and the magic unfolds right before your eyes.
