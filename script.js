@@ -10,42 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const loaderPercent = document.getElementById("loader-percent");
   const dobInput = document.getElementById("dob");
   const dobError = document.getElementById("dobError");
-  const modal = document.getElementById("webcamModal");
-  const closeModal = document.querySelector(".modal-content .close");
-  const allowWebcamButton = document.getElementById("allowWebcam");
 
   let isProcessing = false;
 
-  // Function to show the modal
-  function showModal() {
-    modal.style.display = "flex";
-  }
-
-  // Event listener to close the modal
-  closeModal.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
-
-  // Event listener for the allow webcam button
-  allowWebcamButton.addEventListener("click", function () {
-    modal.style.display = "none";
-    accessWebcam();
-  });
-
-  // Show the modal when the page loads
-  showModal();
-
   // Access the webcam
-  function accessWebcam() {
-    navigator.mediaDevices
-      .getUserMedia({ video: true })
-      .then(function (stream) {
-        video.srcObject = stream;
-      })
-      .catch(function (error) {
-        console.error("Error accessing the webcam: ", error);
-      });
-  }
+  navigator.mediaDevices
+    .getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (error) {
+      console.error("Error accessing the webcam: ", error);
+    });
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -72,27 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
     formPage.classList.add("hidden");
     processingPage.classList.remove("hidden");
     processingPage.classList.add("active");
+    displayLoadingText();
 
-    // Simulate loading process with changing text
+    // Simulate loading process
     let percent = 0;
-    const loadingMessages = [
-      "Calculating your horoscope...",
-      "Reading the stars...",
-      "Finding your fortune...",
-      "Consulting the oracles...",
-      "Checking your zodiac...",
-      "Divining your future...",
-      "Gathering cosmic insights...",
-      "Peering into the unknown...",
-      "Aligning the planets...",
-      "Interpreting the signs...",
-    ];
-
     const interval = setInterval(() => {
       percent += 10;
       loaderPercent.textContent = `${percent}%`;
-      loadingText.textContent =
-        loadingMessages[Math.floor(percent / 10) % loadingMessages.length];
       if (percent >= 100) {
         clearInterval(interval);
         setTimeout(() => {
@@ -121,6 +83,18 @@ document.addEventListener("DOMContentLoaded", function () {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     const imageDataURL = canvas.toDataURL("image/png");
     displayResult(imageDataURL);
+  }
+
+  function displayLoadingText() {
+    const loadingMessages = [
+      "Calculating your horoscope...",
+      "Reading the stars...",
+      "Finding your fortune...",
+      "Consulting the oracles...",
+      "Checking your zodiac...",
+    ];
+    loadingText.textContent =
+      loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
   }
 
   function displayResult(imageDataURL) {

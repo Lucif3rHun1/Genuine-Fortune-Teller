@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genuine Fortune Teller</title>
+    <title>Fortune Teller Form</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div id="formPage" class="page active">
         <div class="container">
-            <h1>Genuine Fortune Teller</h1>
+            <h1>Fortune Teller Form</h1>
             <form id="funForm">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -43,31 +43,15 @@
     </div>
 
     <div id="processingPage" class="page hidden">
-        <div class="loader-container">
-            <h2 id="loadingText">Checking your zodiac...</h2>
-            <div class="loader">
-                <div class="loader-circle"></div>
-                <div id="loader-percent">0%</div>
-            </div>
+        <h2 id="loadingText">Checking your zodiac...</h2>
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <span id="loader-percent">0%</span>
         </div>
     </div>
-
-
 
     <div id="resultPage" class="page hidden">
         <div id="result" class="result-container"></div>
-    </div>
-
-    <!-- Modal for webcam prompt -->
-    <div id="webcamModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Please grant permission to use the webcam. Position the webcam at an appropriate distance and angle to
-                ensure your entire face is clearly visible. This will allow us to perform a facial analysis to provide a
-                more accurate answer to your question.
-            </p>
-            <button id="allowWebcam">Continue</button>
-        </div>
     </div>
 
     <script src="script.js"></script>
