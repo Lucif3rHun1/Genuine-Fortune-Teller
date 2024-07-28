@@ -9,7 +9,9 @@ Mystical Loading Screen: Enjoy a mesmerizing loading screen with dynamic message
 Surprise Effects: The end result is accompanied by delightful visual and auditory effects that will leave you enchanted.
 
 # Technologies Used
-HTML: The backbone of our mystical journey, structuring the form and different stages.\nCSS: Adding style and magic to the experience with gradients, animations, and transitions.\nJavaScript: The puppet master behind the scenes, orchestrating interactions, animations, and the overall flow.
+HTML: The backbone of our mystical journey, structuring the form and different stages.\
+CSS: Adding style and magic to the experience with gradients, animations, and transitions.\
+JavaScript: The puppet master behind the scenes, orchestrating interactions, animations, and the overall flow.
 
 # How to Use
 Start the Journey: Open the form and enter your details. Don't worry; it's all part of the cosmic plan.
